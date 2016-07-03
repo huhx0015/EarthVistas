@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/main_activity_layout"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/main_activity_viewpager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <TextView
+        android:id="@+id/main_activity_error_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="No images were loaded."
+        android:textColor="#FFFFFF"
+        android:textSize="22sp"
+        android:layout_gravity="center"
+        android:visibility="gone" />
+
+    <ProgressBar
+        style="?android:attr/progressBarStyleLarge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/main_activity_progress_bar"
+        android:layout_gravity="center" />
+</FrameLayout>
