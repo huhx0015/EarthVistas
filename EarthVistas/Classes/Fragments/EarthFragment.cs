@@ -35,6 +35,7 @@ namespace EarthVistas
 
         /** FRAGMENT LIFECYCLE METHODS _________________________________________________________ **/
 
+        // OnCreateView(): Creates and returns the view hierarchy associated with the fragment.
         public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
         {
             // Use this to return your custom view for this Fragment
@@ -49,6 +50,7 @@ namespace EarthVistas
 
         /** LAYOUT METHODS _____________________________________________________________________ **/
 
+        // initImage(): Initializes the ImageView.
         private void initImage()
         {
             // Loads the earth image URL and sets it to the earthImage ImageView.
@@ -57,6 +59,7 @@ namespace EarthVistas
                 .Into(earthImage);
         }
 
+        // initText(): Initializes the TextView.
         private void initText()
         {
             earthText.Text = earthImageName; // Sets the earth vista name to the TextView.

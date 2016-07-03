@@ -10,10 +10,11 @@ using Android.Util;
 using Android.Widget;
 using ReddOnXam;
 using Android.Views;
+using Android.Content.PM;
 
 namespace EarthVistas
 {
-    [Activity(Label = "Earth Vistas", MainLauncher = true, Theme = "@style/Theme.AppCompat.Light", Icon = "@drawable/icon")]
+    [Activity(Label = "Earth Vistas", MainLauncher = true, ScreenOrientation = ScreenOrientation.Portrait, Theme = "@style/Theme.AppCompat.Light", Icon = "@drawable/icon")]
     public class MainActivity : AppCompatActivity
     {
 
@@ -45,7 +46,7 @@ namespace EarthVistas
             base.OnCreate(bundle);
 
             initView(); // Initializes the view for this activity.
-            fetchVistas(); 
+            fetchVistas(); // Retrieves the post data from Reddit.
         }
 
         /** LAYOUT METHODS __________________________________________________________________ **/
@@ -66,11 +67,15 @@ namespace EarthVistas
             mainActivityViewPager.Adapter = earthPagerAdapter; // Sets the PagerAdapter object for the activity.
         }
 
+        // fetchVistas(): Retrieves the post data from Reddit.
         private async void fetchVistas()
         {
             Log.Debug(LOG_TAG, "fetchVistas(): Preparing Refit client to retrieve Reddit REST data...");
 
+            // Sets up the Refit client.
             var client = RestService.For<RetrofitInterface>(BASE_URL);
+
+            // Makes a REST call to retrieves the Reddit post data.
             RootObject redditPostsRoot = await client.ListVistas();
 
             if (redditPostsRoot != null && redditPostsRoot.data != null && redditPostsRoot.data.children != null && redditPostsRoot.data.children.Count > 0)
@@ -90,6 +95,7 @@ namespace EarthVistas
                 {
                     // Parses through the post data to retrieve the image title and URL and adds it to the lists.
                     try {
+                       
                         String imageTitle = redditPostList[i].data.title;
                         String imageUrl = redditPostList[i].data.preview.images[0].source.url;
 
