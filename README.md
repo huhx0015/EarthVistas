@@ -10,7 +10,7 @@ DEVELOPER: huhx0015
 
 This is a demo Android application that displays beautiful images of Earth vistas from Reddit. It was built using Xamarin and utilizes several third party libraries such as Xamarin Picasso, CheeseKnife, and Refit.
 
-This application makes a REST call using the Reddit API to retrieve post data from Reddit's /r/EarthPorn sub-reddit channel, which contains posts of stunning images of landscapes around the world. The model class was auto-generated using json2csharp (http://json2csharp.com/).
+This application makes a REST call to Reddit using Refit to retrieve post data from Reddit's /r/EarthPorn sub-reddit channel, which contains posts of stunning images of landscapes around the world. The model class was auto-generated using json2csharp (http://json2csharp.com/).
 
 ## Resources
 
