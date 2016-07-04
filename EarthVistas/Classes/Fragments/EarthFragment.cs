@@ -14,6 +14,8 @@ namespace EarthVistas
         /** CLASS VARIABLES ____________________________________________________________________ **/
 
         // IMAGE VARIABLES
+        private static int MAX_IMAGE_WIDTH = 1080;
+        private static int MAX_IMAGE_HEIGHT = 720;
         private String earthImageName;
         private String earthImageUrl;
 
@@ -56,6 +58,8 @@ namespace EarthVistas
             // Loads the earth image URL and sets it to the earthImage ImageView.
             Picasso.With(Context)
                 .Load(earthImageUrl)
+                .Resize(MAX_IMAGE_WIDTH, MAX_IMAGE_HEIGHT)
+                .CenterCrop()
                 .Into(earthImage);
         }
 

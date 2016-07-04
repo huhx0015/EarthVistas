@@ -21,7 +21,7 @@ namespace EarthVistas
         /** CLASS VARIABLES ____________________________________________________________________ **/
 
         // IMAGE VARIABLES
-        private static int MAX_EARTH_IMAGES = 10; // Sets the maximum number of images to load.
+        private static int MAX_EARTH_IMAGES = 20; // Sets the maximum number of images to load.
 
         // LOGGING VARIABLES
         private static String LOG_TAG = "MainActivity";
